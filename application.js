@@ -54,7 +54,7 @@
     });
   };
 
-  // Delete Stuff
+  // Delete Stuff : Not tested
 
   var deleteQuestion = function(callback, id) {
     $.ajax({
@@ -62,13 +62,23 @@
       type: 'DELETE',
       success: function() {
         // do stuff
+
       }
     });
+  };
+
+  var deleteEvent = function() {
+    $('.question-container').on('click', 'button',function(event) {
+      event.preventDefault();
+      questionId = $(this).data('id');
+      deleteQuestion(console.log('callback'), questionId);
+    })
   };
 
   var init = function() {
     getQuestions(renderQuestions);
     submitQuestionEvent();
+    deleteEvent();
   };
 
   global.functionalFrontEnd = function() {
