@@ -56,14 +56,20 @@
 
   // Delete Stuff : Not tested
 
-  var deleteQuestion = function(callback, id) {
+  var deleteQuestion = function(id) {
     $.ajax({
-      url:'http://localhost:3000/questions/' + id,
+      url:'http://127.0.0.1:3000/questions/' + id,
+      // header: { 'Content-Type' : 'text/plain' },
+      dataType: 'text',
+      // crossDomain: true,
+      data: null,
       type: 'DELETE',
       success: function() {
-        // do stuff
-
-      }
+        console.log('DELETED')
+      },
+      xhrFields: {
+    withCredentials: true
+  },
     });
   };
 
@@ -71,7 +77,7 @@
     $('.question-container').on('click', 'button',function(event) {
       event.preventDefault();
       questionId = $(this).data('id');
-      deleteQuestion(console.log('callback'), questionId);
+      deleteQuestion(questionId);
     })
   };
 
