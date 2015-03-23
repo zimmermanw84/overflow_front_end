@@ -59,17 +59,16 @@
   var deleteQuestion = function(id) {
     $.ajax({
       url:'http://127.0.0.1:3000/questions/' + id,
-      // header: { 'Content-Type' : 'text/plain' },
       dataType: 'text',
       // crossDomain: true,
-      data: null,
+      // data: null,
       type: 'DELETE',
       success: function() {
         console.log('DELETED')
       },
-      xhrFields: {
-    withCredentials: true
-  },
+      // xhrFields: {
+    // withCredentials: true
+  // },
     });
   };
 
