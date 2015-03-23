@@ -1,4 +1,4 @@
-(function(global) {
+var frontEndModule = (function(global) {
 
   // Get all Questions
   var questionId;
@@ -58,8 +58,8 @@
 
   var deleteQuestion = function(id) {
     $.ajax({
-      url:'http://127.0.0.1:3000/questions/' + id,
-      dataType: 'text',
+      url:'http://localhost:3000/questions/' + id,
+      // dataType: 'text',
       // crossDomain: true,
       // data: null,
       type: 'DELETE',
@@ -86,13 +86,10 @@
     deleteEvent();
   };
 
-  global.functionalFrontEnd = function() {
     return {
       init:init,
-    }
-  };
+    };
 
 })(window);
 
-var frontEndModule = functionalFrontEnd();
 frontEndModule.init();
