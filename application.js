@@ -1,4 +1,4 @@
-var frontEndModule = (function(global) {
+var frontEndModule = (function() {
 
   // Get all Questions
   var questionId;
@@ -90,6 +90,6 @@ var frontEndModule = (function(global) {
       init:init,
     };
 
-})(window);
+})();
 
 frontEndModule.init();
