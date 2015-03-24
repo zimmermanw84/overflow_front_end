@@ -65,6 +65,7 @@ var frontEndModule = (function() {
       type: 'DELETE',
       success: function() {
         console.log('DELETED')
+        // TODO: Update DOM
       },
       // xhrFields: {
     // withCredentials: true
